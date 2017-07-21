@@ -56,12 +56,12 @@ nav {
   <div class="main">
     <div class="main-header">
       <img style="height: 100%;" src="../assets/logo.png" />
-      <span style="padding-left: 20px;">前端基础框架及组件示例</span>
+      <span style="padding-left: 20px;">{{description}}</span>
     </div>
     <nav class="navbar navbar-collapse">
       <ul class="nav nav-pills">
         <li v-for="item in topMenuData" :class="topMenuItem === item ? 'active' : ''">
-          <a href="javascript:void(0);" @click="topMenuItemClick(item)">{{item.label}}</a>
+          <a href="javascript:void(0);" @click="topMenuItemClick(item)" v-text="item.label"></a>
         </li>
       </ul>
     </nav>
@@ -85,7 +85,7 @@ export default {
         {
           id: '1001',
           label: 'Vue2.0-Demo',
-          children: [
+          children: [{{#demo}}
             {
               id: '001',
               label: '组件示例',
@@ -96,7 +96,7 @@ export default {
                 { id: '1-003', label: '弹出窗口示例', path: '/home/great-modal' }
               ]
             }
-          ]
+          {{/demo}}]
         }
       ],
       menuData: [],

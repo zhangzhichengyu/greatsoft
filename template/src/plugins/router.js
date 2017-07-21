@@ -7,7 +7,7 @@ const options = {
     {
       path: '/home',
       component: resolve => require(['../views/home'], resolve),
-      children: [
+      children: [{{#demo}}
         {
           path: 'great-tree',
           component: resolve => require(['../views/demo/great-tree'], resolve)
@@ -23,7 +23,7 @@ const options = {
         {
           path: 'great-datagrid',
           component: resolve => require(['../views/demo/great-datagrid'], resolve)
-        }
+        }{{/demo}}
       ].concat({
         path: '*',
         component: resolve => require(['../views/error-404'], resolve)

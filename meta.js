@@ -14,11 +14,15 @@
       "required": true,
       "message": "Project name"
     },
+    "author": {
+      "type": "string",
+      "message": "Author"
+    },
     "description": {
       "type": "string",
       "required": false,
       "message": "Project description",
-      "default": "示例"
+      "default": "Vue项目示例"
     },
     "path": {
       "type": "string",
@@ -26,6 +30,10 @@
       "message": "publish path",
 	  "default": function (data) { return data.name; }
     },
+	"demo": {
+	  "type": "confirm",
+	  "message": "include demo?"
+	},
 	"port": {
 	  "type": "string",
       "required": false,
@@ -33,6 +41,8 @@
 	  "default": 8080
 	}
   },
-  "filters": {},
+  "filters": {
+	 "src/views/demo/*": "demo"
+  },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
 };

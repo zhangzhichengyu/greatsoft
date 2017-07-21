@@ -7,16 +7,16 @@
 <template>
   <div style="padding: 10px;">
     <div class="div-item">
-      <p>选中数据项：{{ treeItem }}====</p>
-      <p>选中数据集合项：{{ treeItems }}===</p>
+      <p>选中数据项：<span v-text="treeItem"/>====</p>
+      <p>选中数据集合项：<span v-text="treeItems"/>===</p>
       <gs-tree tree-width="200px" :open-all="true" :show-check="true"
         :data-provider="treeData" label-field="name" id-field="id"
         v-model="treeItem" :selected-items="treeItems"
         ></gs-tree>
     </div>
     <div class="div-item">
-      <p>选中数据项：{{ comboTreeValue }}</p>
-      <p>选中数据集合项：{{ comboTreeItem }}</p>
+      <p>选中数据项：<span v-text="comboTreeValue"/></p>
+      <p>选中数据集合项：<span v-text="comboTreeItem"/></p>
       <gs-combotree style="width: 260px;" label-field="name"  value-field="id"
         :options="treeData" v-model="comboTreeValue"
         @change="(item) => {comboTreeItem = item}"></gs-combotree>
